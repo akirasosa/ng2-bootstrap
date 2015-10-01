@@ -124,7 +124,8 @@ export class Pagination extends DefaultValueAccessor implements OnInit {
     this._totalPages = v;
     this.numPages.next(v);
     if (this.inited) {
-      this.selectPage(v);
+      // I want to show page 1, when totalPages was set.
+      this.selectPage(1);
     }
   }
 
