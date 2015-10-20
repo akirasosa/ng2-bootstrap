@@ -1,5 +1,3 @@
-/// <reference path="../../tsd.d.ts" />
-
 import {
   Directive,
   Component, View,
@@ -14,6 +12,7 @@ import {
 import {bind, Injectable, forwardRef, ResolvedBinding, Injector} from 'angular2/angular2';
 
 import {positionService} from '../position';
+import {IAttribute} from '../common';
 
 class TooltipOptions {
   public placement:string;
@@ -43,7 +42,7 @@ class TooltipOptions {
   encapsulation: ViewEncapsulation.None
 })
 class TooltipContainer {
-  private classMap:Object;
+  private classMap:any;
   private positionMap:any;
   private top:string;
   private left:string;
@@ -111,7 +110,8 @@ export class Tooltip implements OnInit {
   }
 
   // todo: filter triggers
-  show(event, target) {
+  // params: event, target
+  show() {
     if (this.visible) {
       return;
     }
@@ -134,7 +134,8 @@ export class Tooltip implements OnInit {
       });
   }
 
-  hide(event, target) {
+  // params event, target
+  hide() {
     if (!this.visible) {
       return;
     }

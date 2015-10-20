@@ -1,5 +1,3 @@
-/// <reference path="../../tsd.d.ts" />
-
 import {
   Component, View,
   OnInit, EventEmitter,
@@ -73,7 +71,7 @@ export class Rating implements ControlValueAccessor, OnInit {
   private buildTemplateObjects(ratingStates:Array<any>, max:number) {
     ratingStates = ratingStates || [];
     let count = ratingStates.length || max;
-    let result = [];
+    let result:any[] = [];
     for (let i = 0; i < count; i++) {
       result.push(Object.assign({
         index: i,
@@ -115,7 +113,7 @@ export class Rating implements ControlValueAccessor, OnInit {
     this.rate(this.value + sign);
   }
 
-  onChange = (_) => {};
+  onChange = (_:any) => {};
   onTouched = () => {};
 
   registerOnChange(fn:(_:any) => {}):void {

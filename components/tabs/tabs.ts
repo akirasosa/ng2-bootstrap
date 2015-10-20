@@ -1,5 +1,3 @@
-/// <reference path="../../tsd.d.ts" />
-
 import {
   Component, View, Directive,
   OnInit, OnDestroy, DoCheck, EventEmitter,
@@ -7,7 +5,7 @@ import {
   CORE_DIRECTIVES, NgClass
 } from 'angular2/angular2';
 
-import {NgTransclude} from '../common';
+import {NgTransclude, IAttribute} from '../common';
 
 // todo: add active event to tab
 // todo: fix? mixing static and dynamic tabs position tabs in order of creation
@@ -42,7 +40,7 @@ export class Tabset implements OnInit {
       'nav-stacked': this.vertical,
       'nav-justified': this.justified
     };
-    map['nav-' + (this.type || 'tabs')] = true;
+    (<IAttribute>map)['nav-' + (this.type || 'tabs')] = true;
     return map;
   }
 

@@ -1,7 +1,5 @@
 # ng2-bootstrap
-Native Angular2 directives for Bootstrap
-
-Works with Bootstrap 3 and 4-alfa
+Native Angular2 directives for Bootstrap, works with Bootstrap 3 and 4-alfa
 
 Goal: smooth transition from ui-bootstrap to angular2,
 all components will have same API
@@ -17,24 +15,39 @@ all components will have same API
 
 [http://valor-software.github.io/ng2-bootstrap/](http://valor-software.github.io/ng2-bootstrap/)
 
-# Starter package
+## If you need more modules check [here](https://github.com/valor-software/ng2-plans)
 
-You can start hacking by cloning starter repo:
-[https://github.com/valor-software/angular2-bootstrap-starter](https://github.com/valor-software/angular2-bootstrap-starter)
+# Starter packages
+
+With webpack: [https://github.com/valor-software/angular2-bootstrap-starter](https://github.com/valor-software/angular2-bootstrap-starter)
+
+With gulp: [pkozlowski-opensource/ng2-play](https://github.com/pkozlowski-opensource/ng2-play/pull/34/files)
 
 ## Install from npm
 
 ```bash
 npm i ng2-bootstrap --save
-# if you are developing with typescript it will link .d.ts from package definition
-tsd link
 ```
 
-## Install from source
+## Quick start
 
-```bash
-  npm i
-  npm start
+```ts
+import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
+
+@Component({
+  selector: 'app'
+})
+@View({
+  template: `
+    <alert type="info">ng2-bootstrap hello world!</alert>
+    This is a webpack sample:
+  `,
+  directives: [
+    Alert
+  ]
+})
+export class Home {
+}
 ```
 
 ## Components
@@ -71,6 +84,4 @@ Please read central `ng2` modules [readme](https://github.com/valor-software/ng2
 - [ ] support animation  (in progress...)
 - [x] demo page
 - [x] docs
-- [ ] publish to bower, etc.
-- [ ] migration guide from Angular 1 to Angular 2
 - [x] publish to npm

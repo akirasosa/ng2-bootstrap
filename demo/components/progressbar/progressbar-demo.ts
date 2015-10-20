@@ -3,10 +3,10 @@ import {Component, View, CORE_DIRECTIVES, NgStyle} from 'angular2/angular2';
 // switch bs3\bs4 templates
 import {Ng2BootstrapConfig, Ng2BootstrapTheme} from '../../../components/ng2-bootstrap-config';
 
-import {progressbar} from '../../../components/index';
+import {progressbar} from '../../../ng2-bootstrap';
 
 // webpack html imports
-let templates = {
+let templates:any = {
   [Ng2BootstrapTheme.BS3]: require('./progressbar-demo.html'),
   [Ng2BootstrapTheme.BS4]: require('./progressbar-demo-bs4.html')
 };
@@ -23,7 +23,7 @@ export class ProgressbarDemo {
   public showWarning:boolean;
   public dynamic:number;
   public type:string;
-  public stacked:Array<any> = [];
+  public stacked:any[] = [];
 
   constructor() {
     this.random();
@@ -32,7 +32,7 @@ export class ProgressbarDemo {
 
   private random() {
     let value = Math.floor((Math.random() * 100) + 1);
-    let type;
+    let type:string;
 
     if (value < 25) {
       type = 'success';

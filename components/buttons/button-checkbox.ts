@@ -1,4 +1,3 @@
-/// <reference path="../../tsd.d.ts" />
 import {
   Directive,
   Self, NgModel, Renderer, ElementRef,
@@ -56,7 +55,7 @@ export class ButtonCheckbox implements ControlValueAccessor, OnInit {
     this.value = value;
   }
 
-  onChange = (_) => {};
+  onChange = (_:any) => {};
   onTouched = () => {};
 
   registerOnChange(fn:(_:any) => {}):void {
